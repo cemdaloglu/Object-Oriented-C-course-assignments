@@ -1,0 +1,85 @@
+Trapezoid:
+
+Integration of f(x) = 2x + 5 from a=-3.0 to b=13.0 with an expected output of 240
+
+        n = 100, approximate solution = 235.066, exact solution = 240
+        n = 200, approximate solution = 237.526, exact solution = 240
+        For n = 100 and 2n = 200, EOC = 0.996262
+
+        n = 400, approximate solution = 238.762, exact solution = 240
+        For n = 200 and 2n = 400, EOC = 0.998135
+
+        n = 800, approximate solution = 239.38, exact solution = 240
+        For n = 400 and 2n = 800, EOC = 0.999068
+
+        n = 1600, approximate solution = 239.69, exact solution = 240
+        For n = 800 and 2n = 1600, EOC = 0.999534
+
+Integration of f(x) = x/pi * sin(x) from a=0.0 to b=6.28319 with an expected output of -2
+
+        n = 100, approximate solution = -1.99544, exact solution = -2
+        n = 200, approximate solution = -1.99885, exact solution = -2
+        For n = 100 and 2n = 200, EOC = 1.99318
+
+        n = 400, approximate solution = -1.99971, exact solution = -2
+        For n = 200 and 2n = 400, EOC = 1.99675
+
+        n = 800, approximate solution = -1.99993, exact solution = -2
+        For n = 400 and 2n = 800, EOC = 1.99841
+
+        n = 1600, approximate solution = -1.99998, exact solution = -2
+        For n = 800 and 2n = 1600, EOC = 1.99922
+
+================================================================================================
+
+Simpson:
+
+Integration of f(x) = 2x + 5 from a=-3.0 to b=13.0 with an expected output of 240
+
+        n = 100, approximate solution = 235.066, exact solution = 240
+        n = 200, approximate solution = 237.526, exact solution = 240
+        For n = 100 and 2n = 200, EOC = 0.996262
+
+        n = 400, approximate solution = 238.762, exact solution = 240
+        For n = 200 and 2n = 400, EOC = 0.998135
+
+        n = 800, approximate solution = 239.38, exact solution = 240
+        For n = 400 and 2n = 800, EOC = 0.999068
+
+        n = 1600, approximate solution = 239.69, exact solution = 240
+        For n = 800 and 2n = 1600, EOC = 0.999534
+
+Integration of f(x) = x/pi * sin(x) from a=0.0 to b=6.28319 with an expected output of -2
+
+        n = 100, approximate solution = -1.99608, exact solution = -2
+        n = 200, approximate solution = -1.99902, exact solution = -2
+        For n = 100 and 2n = 200, EOC = 1.99481
+
+        n = 400, approximate solution = -1.99975, exact solution = -2
+        For n = 200 and 2n = 400, EOC = 1.9975
+
+        n = 800, approximate solution = -1.99994, exact solution = -2
+        For n = 400 and 2n = 800, EOC = 1.99877
+
+        n = 1600, approximate solution = -1.99998, exact solution = -2
+        For n = 800 and 2n = 1600, EOC = 1.99939
+
+====================================================================================================
+
+- We created an abstract class Integrator. Integrator class has a virtual method rule(), this method will be overwritten by Simpson and Trapezoid classes to evaluate the proper quadrature formula.
+
+- Another abstract class Function is created. This class has a virtual method called func_to_integrate(), which will be overwritten by Func1 and Func2 classes which refer to the functions given on the assignment sheet.
+
+- Another class called Test is created for the part d tasks. Test class expects an integral to be solved, number of steps to perform, and the exact solution of the given integral.
+                                                             Then,
+                                                             • reports the true integral value and expected convergence order
+                                                             • starts with one big interval without subdivisions
+                                                             • doubles the number of subintervals after each step
+                                                             • applies the composite rule in each step
+                                                             • reports in each step:
+                                                             – the current estimated value
+                                                             – the resulting error
+                                                             – the estimated order of convergence (EOC)
+                                                             – the deviation from the expected orderThis class will be used to test the implementation of the integration rules.
+
+- Simpson and Trapezoidal are inherited from Integrator. Func1 and Func2 is inherited from Function.

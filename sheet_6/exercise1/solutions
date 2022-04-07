@@ -1,0 +1,38 @@
+1)
+output: ABCDABCd
+
+On the first line of main(), d1 is initialized, in the order A, B, C, D.
+— First, and only for the constructor of the most derived class (§ 4.5), virtual base classes are initialized in the order they appear on a depth-first left-to-right traversal of the directed acyclic graph of base classes, where “left-to-right” is the order of appearance of the base classes in the derived class base-specifier-list.
+— Then, direct base classes are initialized in declaration order as they appear in the base-specifier-list
+— Finally, the compound-statement of the constructor body is executed.
+So the output is ABCD.
+
+Implicitly-defined copy constructor would have called the copy constructor of its bases. But when you provide a user-defined copy constructor, this is something you have to do explicitly.
+
+2)
+output: 22
+
+object.f() calls Derived::f(), returning 2.
+
+((Base&)object).f() casts object to a Base& before calling f(), but since f() is a virtual function, Derived::f() is still called, returning 2.
+
+3)
+output: 121
+
+Even though foo() is virtual, it is not considered to be so during the execution of constructors and destructors.
+
+If an object of type B is being constructed, first the constructor of A is called, then the constructor of B. Thus, the first "1" comes from constructor of A. 
+When b.bar() is called, B::foo() would use the "B part" of the object and so "2" comes from there.
+
+When the object is destroyed, B's destructor is called first, then A's destructor, so the last "1" comes from the destructor of A.
+
+4)
+output: YX
+
+arr is an array of X, not of pointers to X. When an object of type Y is stored in it, it is converted to X, and we lose the "Y part" of the object. This is commonly known as "slicing".
+Therefore "Y" comes from the print(y1) command and "X" comes from the arr[0] command.
+
+5)
+output: 1
+
+When the compiler sees a call to a function f() inside g() it should choose the one from the global scope, and the program should output "1".

@@ -1,0 +1,12 @@
+Implementation effort is less in constexpr than metaprogramming. In fibonacci, TMP should reuse instantiation whereas
+constexpr function might recompute it each time. In that case TMP compiles faster so its complexity is less than constexpr.
+This can be seen in compilation times below, there is a small difference in prime numbers but the difference is high in fibonacci.
+Also, TMP prime number implementation gives a fatal error: template instantiation depth exceeds maximum but that is not the case
+for the constexpr implementation. One can write higher indexes in constexpr one.
+If the primary goal is to write a time efficient code i would choose TMP but if this is not the case i would choose constexpr.
+
+Fibonacci constexpr time: 841.229 ms
+Prime number constexpr time: 0.4487 ms
+
+Fibonacci TMP time: 0.9766 ms
+Prime number TMP time: 0.9108 ms

@@ -1,0 +1,37 @@
+(2x3) matrix:
+    2    -1     1
+   -1     2     1
+
+(3x2) matrix:
+    2    -1
+   -1     2
+    0     0
+
+(2x3) matrix:
+    4    -2     2
+   -2     4     2
+
+(1x2) matrix:
+    4     4
+
+(2x3) matrix:
+    4    -2     2
+   -2     4     2
+
+(2x3) matrix:
+    6    -3     3
+   -3     6     3
+
+complex output for (1, 2):(4,8)
+(2x3) matrix:
+    2    -1     1
+   -1     2     1
+
+(1x2) matrix:
+    1/2    13/18
+
+(2x3) matrix:
+    1/2     1/6     1/6
+    1/6     1/2     1/6
+
+

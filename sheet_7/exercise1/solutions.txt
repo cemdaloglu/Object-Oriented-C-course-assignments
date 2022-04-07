@@ -1,0 +1,12 @@
+1
+a)
+Observations:
+Compilation time stays nearly constant from k=5 to k=50.
+An overflow in expression happens during compilation for k=50, since the typ int is being used for value and some Number is too large.
+From the reference I would suggest to use Fast doubling, since its constant runtime factor is better and it still has a recursive definition.
+One only needs to detect if the index is even or odd, which can be done for example via a different class.
+
+b)
+The recursion is guaranteed to terminate since there is always a prime P >=N.
+
+

@@ -1,0 +1,11 @@
+(a) <git init> command is used to initialize a new Git repository
+(b) < git add .> command is used to track the created file. <git commit> command is applied to save the changes in repository.
+(c) <git log> command shows the all applied commits with the author, date and commit message. <git status> command showed that the work tree is clean, <git status> shows the current state of branches.
+(d) After changing and applying <git add .> then <git commit> commands, commit can be reverted by <git reset HEAD~> command. With the help of the <git log> command commit can be checked. It shows the data of the commit done in (b).
+(e) <git stash> command saves the changes without making any changes to the repository and working tree.
+
+(f) <git clone <url>> command creates a folder inside the desktop folder which is created in step (a).
+(g) text file changed via Gitlab.
+(h) Another line changed in the same file's desktop version. After that <git pull> is applied and text file showed the both changes.
+(i) After creating a merge conflict <git checkout master> and <git checkout HEAD> commands are applied. These commands showed each one's number of updates. Then, the text file in the desktop is checked. Text file has newly added lines which are"<<, HEAD, ===, >>>, origin/master" and the part between "<< HEAD" and "===" is deleted with all the newly added lines. By doing so makes the text file as the same as the text file in Gitlab.
+(j) <git stash pop> is applied to make the previously saved or stashed change.

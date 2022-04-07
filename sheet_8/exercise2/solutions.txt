@@ -1,0 +1,12 @@
+(b)
+It is not possible to replace class attributes' types with auto because class attributes are actually template parameters,
+and it is not possible to change std::size_t or typename with auto.
+
+(d)
+I think using decltype(auto) without knowing whether dealing with a reference or pointer or a value is actually a good idea. For instance,
+the operators += and *= output types are not important for the user, and it is a good idea to make them auto. However, for + and * operators
+I think it is good to know the return type explicitly because the program may return std::vector<std::vector<T>> or ** which has
+different functions or parameters to use.
+Moreover, making local variables inside methods is also a good idea because that is also irrelevant for user and can be implicitly defined.
+I think there is no difference between defining the output methods' return types explicitly or implicitly. I defined them explicitly but they
+can also be auto as well.

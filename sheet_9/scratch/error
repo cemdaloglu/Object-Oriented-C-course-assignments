@@ -1,0 +1,11 @@
+error: creating pointer to member function of non-class type â€˜const charâ€™
+   19 |     enum {value = Helper<T1,void (T1::*)() const>::value};
+      |          ^
+/mnt/c/Users/CEM/CLionProjects/sheet3_scratch/exerc_2/task2.h: In instantiation of â€˜struct hasPrint<float>â€™:
+/mnt/c/Users/CEM/CLionProjects/sheet3_scratch/exerc_2/task2.h:29:25:   required by substitution of â€˜template<class P> typename std::enable_if<(! hasPrint<T1>::value)>::type print(P) [with P = float]â€™
+/mnt/c/Users/CEM/CLionProjects/sheet3_scratch/exerc_2/main.cpp:80:12:   required from here
+/mnt/c/Users/CEM/CLionProjects/sheet3_scratch/exerc_2/task2.h:19:10: error: creating pointer to member function of non-class type â€˜const floatâ€™
+/mnt/c/Users/CEM/CLionProjects/sheet3_scratch/exerc_2/task2.h: In instantiation of â€˜typename std::enable_if<(! hasPrint<T1>::value)>::type print(P) [with P = Vector; typename std::enable_if<(! hasPrint<T1>::value)>::type = void]â€™:
+/mnt/c/Users/CEM/CLionProjects/sheet3_scratch/exerc_2/main.cpp:81:12:   required from here
+/mnt/c/Users/CEM/CLionProjects/sheet3_scratch/exerc_2/task2.h:31:15: error: no match for â€˜operator<<â€™ (operand types are â€˜std::ostreamâ€™ {aka â€˜std::basic_ostream<char>â€™} and â€˜const Vectorâ€™)
+   31 |     std::cout << p;

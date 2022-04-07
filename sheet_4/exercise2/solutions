@@ -1,0 +1,33 @@
+(a)
+Node *first() const { return _first; }
+- makes sense -> the list should not be changed, but the first node could be changed later
+
+Node *next(const Node *node) const { return node->_next; }
+- makes sense -> the passed node should not be changed, aswell as the list, but the next node could be changed later
+
+void append(int);
+- makes sense -> list gets changed, parameter could be const for optimization
+
+void insert(Node *, int);
+- makes sense -> list gets changed, node* cannot be const, as it could be mutated (next value could be set)
+
+void erase(Node *);
+- makes sense -> list gets changed, node* will get deleted, so cannot be const
+
+Node *_first;
+- makes sense -> should get changed throughout process
+
+
+(b)
+* When we declare a function as const, the this pointer passed to function becomes const. Adding mutable to a variable allows a const pointer to change members. Additionally, mutable is needed so _maxCache can be updated, even though the method is const.
+* if the list is changed multiple times between max() calls, it needs to be computed only once
+
+
+(c)
+* main output:
+2
+3
+8
+max: 8
+
+* first one is for not changing the list inside the printList method and if the second one does not exists, one can change the value of the node inside the for loop.

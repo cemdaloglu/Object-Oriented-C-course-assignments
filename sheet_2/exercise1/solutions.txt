@@ -1,0 +1,11 @@
+Q1: Output: 12
+    There is a varaibale scope and a potential variable scope.
+Q2: Output: 5
+    Duff's device.  Its discovery is credited to Tom Duff in November 1983, when Duff was working for Lucasfilm and used it to speed up a real-time animation program. -Wikipedia
+    Could be used to jump over certain parts of a loop in the first run. It looks highly confusing and i think i would only use it, if it is really necessary.
+Q3: Output: 428
+    Using call by reference can change states outside the function call and one can not be shure if he is using two different memorie locations, if two or more variables are beeing used.
+Q4: Output: 132
+    Templates are beeing used instead of functions only if there is no function declaration with the right types.
+Q5: Output: BA
+    The initialization order of member variables is determined by their order of declaration, not their order in the initialization list.

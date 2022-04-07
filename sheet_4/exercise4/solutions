@@ -1,0 +1,2 @@
+with const int** one expects a pointer to a pointer to a constant int. The thing is, that the second pointer is not constant, which makes it possible to change the constant the pointer chain is pointing to.
+Second does not compile because, we try to assign bar(), which is an const int*, to int *, through which the elements that bar() promised would not be changed could be changed.

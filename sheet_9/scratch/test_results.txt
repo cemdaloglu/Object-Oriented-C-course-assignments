@@ -1,0 +1,66 @@
+Integration of f(x) = 2x + 5 from a=-3.0 to b=13.0 with an expected output of 240
+
+        n = 100, approximate solution = 235.066, exact solution = 240
+        n = 200, approximate solution = 237.526, exact solution = 240
+        For n = 100 and 2n = 200, EOC = 0.996262
+
+        n = 400, approximate solution = 238.762, exact solution = 240
+        For n = 200 and 2n = 400, EOC = 0.998135
+
+        n = 800, approximate solution = 239.38, exact solution = 240
+        For n = 400 and 2n = 800, EOC = 0.999068
+
+        n = 1600, approximate solution = 239.69, exact solution = 240
+        For n = 800 and 2n = 1600, EOC = 0.999534
+
+12.1019 ms
+Integration of f(x) = x/pi * sin(x) from a=0.0 to b=6.28319 with an expected output of -2
+
+        n = 100, approximate solution = -1.99544, exact solution = -2
+        n = 200, approximate solution = -1.99885, exact solution = -2
+        For n = 100 and 2n = 200, EOC = 1.99318
+
+        n = 400, approximate solution = -1.99971, exact solution = -2
+        For n = 200 and 2n = 400, EOC = 1.99675
+
+        n = 800, approximate solution = -1.99993, exact solution = -2
+        For n = 400 and 2n = 800, EOC = 1.99841
+
+        n = 1600, approximate solution = -1.99998, exact solution = -2
+        For n = 800 and 2n = 1600, EOC = 1.99922
+
+6.5023 ms
+Integration of f(x) = 2x + 5 from a=-3.0 to b=13.0 with an expected output of 240
+
+        n = 100, approximate solution = 235.066, exact solution = 240
+        n = 200, approximate solution = 237.526, exact solution = 240
+        For n = 100 and 2n = 200, EOC = 0.996262
+
+        n = 400, approximate solution = 238.762, exact solution = 240
+        For n = 200 and 2n = 400, EOC = 0.998135
+
+        n = 800, approximate solution = 239.38, exact solution = 240
+        For n = 400 and 2n = 800, EOC = 0.999068
+
+        n = 1600, approximate solution = 239.69, exact solution = 240
+        For n = 800 and 2n = 1600, EOC = 0.999534
+
+9.0017 ms
+Integration of f(x) = x/pi * sin(x) from a=0.0 to b=6.28319 with an expected output of -2
+
+        n = 100, approximate solution = -1.99544, exact solution = -2
+        n = 200, approximate solution = -1.99885, exact solution = -2
+        For n = 100 and 2n = 200, EOC = 1.99318
+
+        n = 400, approximate solution = -1.99971, exact solution = -2
+        For n = 200 and 2n = 400, EOC = 1.99675
+
+        n = 800, approximate solution = -1.99993, exact solution = -2
+        For n = 400 and 2n = 800, EOC = 1.99841
+
+        n = 1600, approximate solution = -1.99998, exact solution = -2
+        For n = 800 and 2n = 1600, EOC = 1.99922
+
+22.2234 ms
+
+Process finished with exit code 0

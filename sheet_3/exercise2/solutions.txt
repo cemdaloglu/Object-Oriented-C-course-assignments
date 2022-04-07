@@ -1,0 +1,6 @@
+(d) output:
+1
+2
+3
+(e): list2 has same values as list has. 
+//free(): double free detected in tcache 2??

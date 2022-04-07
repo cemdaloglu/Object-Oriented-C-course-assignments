@@ -1,0 +1,27 @@
+By using the [r] command, program gave a segmentation error at line 11. Therefore, the error is caused by "Vector b" and the method which begins at line 26 of the header file is responsible for this object. The bug is found at that method.
+
+[r] command applied again after fixing the first bug and a.print() gave an empty array which is not expected. Therefore, the line 30 of the header file is checked and the bug found.
+
+After that changes a.print() and b.print() gave the expected results. Then, the following commands are applied respectively [b 17], [s], [n], [s], [n]. The first [s] command stepped into the line 121 of the vector_broken.cc and the second [s] is stepped into line 71 of the same file. [n] command gave a segmentation error at line 73 of the same file. Line 40 of the header file is responsible for this part of the code and so the bug is found in this method.
+
+Fixing these bugs are enough to get the expected outputs from the testvector.cc file. However, there are more bugs which cannot be detected in GDB debugger.
+
+At line 72 and 88 of the broken_vector.cc file, i <= N should be i < N.
+
+Output: 
+(6) vector:
+    2     2     2     2     2     2
+(4) vector:
+    1     2     3     4
+(6) vector:
+    4     4     4     4     4     4
+(6) vector:
+    4     4     4     4     4     4
+(6) vector:
+    6     6     6     6     6     6
+The scalar product of vector a and vector c is 72
+
+Element 1 of vector d is 2
+
+(5) vector:
+    5    -4     4    -4     5

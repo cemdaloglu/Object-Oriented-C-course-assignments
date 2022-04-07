@@ -1,0 +1,58 @@
+output: 0
+
+getFoo() returns int&, so the type of the expression a.getFoo() that is used for deduction is int, not int&. Now int is
+being used for deducing T in our imaginary void f(T t), so T is int. Since auto uses the same rule, the type of bar is
+also int.
+
+Since bar is not a reference, incrementing it does not increment foo, and the output of the program is 0.
+
+=================================
+output: A1
+
+A normal conversion function can have a deduced return type.If conversion functions don't have a return type specified
+in the same way as normal functions, they do have a return type:
+
+The type of the conversion function is “function taking no parameter returning conversion-type-id”.
+
+Where conversion-type-id is the T in operator T(). So we're allowed to deduce this type just like we deduce return types
+from normal functions.
+
+==========================================
+output: 1426
+
+First, b1 is default initialized. All members are initialized before the body of the constructor, so b1.a is default
+initialized first, and we get the output 14.
+
+Then, b2 is initialized with the move construcor (since std::move(b1)converts the reference to b1 to an xvalue, allowing
+it to be moved from.) In B's move constructor, a is initialized in the member initializer list. Even though b is an rvalue
+reference (and bound to an rvalue), b itself is an lvalue, and cannot be moved from. b2.a is then copy initialized,
+printing 2, and finally the body of B's move constructor prints 6.
+
+===========================
+output: 1255
+
+First, the line Y y1;
+creates an instance of Y. Y has an X data member, which is default constructed, printing 1.
+
+Then, Y y2 = std::move(y1);
+
+copy-initializes another Y. The std::move turns y1 into an rvalue, but since Y has no move constructor, its copy constructor
+is called. The implicitly-defined copy-constructor performs a copy of x.
+
+The Y inside the Y(const Y &) copy constructor is const, but x is marked mutable. So x is considered non-const and X(X &)
+is called, printing 2.
+
+Finally, both y1 and y2 are destroyed at the end of main, printing 55.
+
+==========================
+output: 112212
+
+In this example, all three functions are called once with an lvalue and once with an rvalue. In all cases, calling with an
+lvalue (i) collapses T&& x to T& x (an lvalue reference), and calling with an rvalue (20) collapses T&& x to T&& x
+(an rvalue reference). Inside the functions, x itself is always an lvalue, no matter if its type is an rvalue reference or
+an lvalue reference.
+
+-For the first example, y(int&) is called for both cases. Output: 11.
+-For the second example, move(x) obtains an rvalue reference, and y(int&&)is called for both cases. Output: 22.
+-For the third example, forward<T>(x) obtains an lvalue reference when x is an lvalue reference, and an rvalue
+reference when x is an rvalue reference, resulting in first a call to y(int&)and then a call to y(int&&). Output: 12.

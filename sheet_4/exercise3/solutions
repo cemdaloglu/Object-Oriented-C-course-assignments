@@ -1,0 +1,16 @@
+a) array
+- size is known at compile time
+- entries are consequently numbered
+
+b)
+pivots: stack
+- "stack structure"
+data: set or multiset (if entries are not unique)
+- quick lookup
+
+c) queue
+- "FIFO"
+
+d) map
+- key is node index and value its value
+- uses less space than structs of arrays or array of structs

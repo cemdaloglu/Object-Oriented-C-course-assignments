@@ -1,0 +1,36 @@
+1. Answer: 2
+
+In the C++ standard says: "A template-parameter of a template template-parameter is permitted to have a default template-argument.
+When such default arguments are specified, they apply to the template template-parameter in the scope of
+the template template-parameter."
+
+In this case, the template template-parameter is C, and the scope of C is the function g(), so the default arguments of C (i.e. T = B) are applied and C::f() is called inside g().
+
+2. Answer: abbc
+
+The first line in main(), X x; is straightforward, it calls the default constructor.
+
+The next two lines is the heart of the question: The difference between X y(x) and X z = y is not that the first calls the copy constructor, and the second calls the copy assignment operator. The difference is that the first is direct initialization and the second is copy initialization.
+"If the initialization is direct-initialization, or if it is copy-initialization where the (...) source type is the same class as (...) the class of the destination, constructors are considered." So both our cases use the copy constructor.
+
+Not until z = x; do we have an actual assignment that uses the assignment operator.
+
+3. Answer: 112
+
+Each function template specialization instantiated from a template has its own copy of any static variable.
+
+This means we get two instantiations of f, one for T=int, and one for T=double. Thus, i is shared between the two int calls, but not with the double call.
+
+4. Answer: abBA
+
+The derived class constructor B() first calls the base class constructor A(), and then executes the compound-statement (the part inside {}) of its own body.
+
+The derived class destructor ~B() first executes its own body, and then calls the base class destructor ~A().
+
+5. Answer: 111
+
+The [] operator inserts an element if the key is not present. In the case of a class, the element is default constructed. So doing m[7] calls the default constructor of C (no matter if we assign to it right after), setting default_constructed to true.
+
+The expression C(1) constructs an instance of C using the constructor taking an int, setting constructed to true.
+
+The = in m[7] = C(1) calls the copy assignment operator to copy assign the newly created C(1) to the previously default constructed C inside the map, setting assigned to true.
